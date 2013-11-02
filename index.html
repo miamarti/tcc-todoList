@@ -1,29 +1,63 @@
-<html lang="en">
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js">
+<!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="CleverCode">
-	<meta name="description" content="Normalized JavaScript">
-	<title>ToDOList</title>
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-	<script data-main="butchery/src/controller/FrontController" src="butchery/butchery.js"></script>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/todoList.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/custom_1.css" /> -->
+
+<link rel="stylesheet" href="assets/font-awesome-4.0.1/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/todoList.css" />
+<script src="assets/js/modernizr.custom.63321.js"></script>
+<script data-main="butchery/src/controller/FrontController" src="butchery/butchery.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-        <div class="navbar-header">
-          <a class="navbar-brand">Butchery ToDOList</a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex8-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active" id="menuAllEvents"><a href="#ToDoController/getToDoList">All Events</a></li>
-            <li id="menuUrgent"><a href="#ToDoController/getUrgent">Urgent</a></li>
-            <li id="menuCancelled"><a href="#ToDoController/getCancelled">Cancelled</a></li>
-          </ul>
-        </div>
-    </nav>
+
 	<div class="container">
-		<div id="content"></div>
+
+		<div class="custom-todoList-wrap custom-todoList-full">
+			<div class="custom-header clearfix">
+				<h2>
+					todoList <span><span>All</span> | <a href="#">Urgent</a></span>
+				</h2>
+				<h3 class="custom-month-year">
+					<span id="custom-month" class="custom-month">The simple simple </span> <span
+						id="custom-year" class="custom-year">list</span>
+					<nav>
+						<span id="custom-prev" class="custom-prev"></span>
+						<span id="custom-next" class="custom-next"></span>
+						<span id="custom-current" class="custom-current" title="Got to current date"></span>
+					</nav>
+				</h3>
+			</div>
+			
+			<div id="todoList" class="fc-todoList-container">
+				<div class="fc-todoList fc-five-rows">
+					<div class="fc-body">
+						<div class="fc-row" id="todoListContent"></div>
+						<div class="fc-row">
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+							<div><span class="fc-date"></span><span class="fc-urgent"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
+	<!-- /container -->
+
 </body>
 </html>

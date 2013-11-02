@@ -17,14 +17,14 @@ define(["../dao/ToDoDAO", "../models/ToDoBean", "../views/ToDoView"], function(T
 				var table = '';
 				ToDoDAO.getTodoList(function(resultSet){
 					if (resultSet) {
-						table += ToDoView.getLineTable(new ToDoBean(resultSet.value));
+						table += ToDoView.getLineList(new ToDoBean(resultSet.value));
 						resultSet.continue();
 					} else{
-						$('#content tbody').html(table);
+						$('#todoListContent').html(table);
 					}
 				});
-				$('.navbar-nav li').removeClass('active');
-				$('#menuAllEvents').addClass('active');
+//				$('.navbar-nav li').removeClass('active');
+//				$('#menuAllEvents').addClass('active');
 			},
 			
 			/**
@@ -34,14 +34,14 @@ define(["../dao/ToDoDAO", "../models/ToDoBean", "../views/ToDoView"], function(T
 				var table = '';
 				ToDoDAO.getTodoUrgentList(function(resultSet){
 					if (resultSet) {
-						table += ToDoView.getLineTable(new ToDoBean(resultSet.value));
+						table += ToDoView.getLineList(new ToDoBean(resultSet.value));
 						resultSet.continue();
 					} else{
-						$('#content tbody').html(table);
+						$('#todoListContent').html(table);
 					}
 				});
-				$('.navbar-nav li').removeClass('active');
-				$('#menuUrgent').addClass('active');
+//				$('.navbar-nav li').removeClass('active');
+//				$('#menuUrgent').addClass('active');
 			},
 			
 			/**

@@ -6,6 +6,10 @@ define(function(){
 		
 		getLineTable: function(toDoBean){
 			return '<tr><td>' + toDoBean.getTitle() + '</td><td>' + toDoBean.getUrgent() + '</td><td>' + toDoBean.getPlannedTo() + '</td><td>' + toDoBean.getEnabled() + '</td></tr>';
+		},
+		
+		getLineList: function(toDoBean){
+			return '<div><span class="fc-titleList">' + toDoBean.getTitle() + '</span><span class="fc-urgent">' + toDoBean.getUrgent() + '</span></div>';
 		}
 	};
 	return _this;
