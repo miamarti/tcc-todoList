@@ -210,7 +210,8 @@ body {
 }
 
 .custom-header span:before {
-	font-family: 'fontawesome-selected';
+/* 	font-family: 'fontawesome-selected'; */
+	font-family: 'FontAwesome';
 	color: #fff;
 	display: inline-block;
 	text-align: center;
@@ -219,11 +220,11 @@ body {
 }
 
 .custom-header nav span.custom-prev:before {
-	content: '\25c2';
+	content: '\f06d';
 }
 
 .custom-header nav span.custom-next:before {
-	content: '\25b8';
+	content: '\f070';
 }
 
 .custom-header nav span:last-child {
@@ -231,8 +232,12 @@ body {
 	border-radius: 3px;
 }
 
+.custom-header nav span.custom-current-menu:before {
+	content: '\f00a';
+}
+
 .custom-header nav span.custom-current:before {
-	content: '\27a6';
+	content: '\f0fe';
 }
 
 
@@ -271,7 +276,8 @@ body {
 .fc-todoList .fc-row > div > span.fc-titleList {
 	color: rgba(255,255,255,0.9);
 	text-shadow: none;
-	font-size: 26px;
+/* 	font-size: 26px; */
+	font-size: 1.5em;
 	font-weight: 300;
 	bottom: auto;
 	right: auto;
@@ -279,6 +285,9 @@ body {
 	left: 10px;
 	text-align: left;
 	text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	width: 80%;
+	display: inline-block;
+	text-align: left;
 }
 
 .fc-todoList .fc-body {
@@ -446,17 +455,19 @@ html, body, .container {
 	text-align: right;
 }
 
-.fc-todoList .fc-row > div > span.fc-titleList {
-	width: 80%;
+.fc-todoList .fc-row > div > span.fc-icons {
 	display: inline-block;
-	text-align: left;
-}
-
-.fc-todoList .fc-row > div > span.fc-urgent {
-	display: inline-block;
-	width: 40px;
+/* 	width: 40px; */
+	width: 20%;
 	color: #fff;
 	color: rgba(255,255,255,0.7);
 	font-size: 10px;
 	text-transform: uppercase;
+	text-align: right;
+}
+
+.fc-todoList .fc-row > div > span.fc-icons .fa {
+	text-align: right;
+	float: right;
+	font-size: 2.5em;
 }
