@@ -6,8 +6,8 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 			 */
 			getStart : function(){
 				this.getToDoList();
-				ToDoView.setBackground('womanly');
-				ToDoView.getBackground();
+//				ToDoView.setBackground('womanly');
+//				ToDoView.getBackground();
 				console.log('ToDoList Start...');
 			},
 			
