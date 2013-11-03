@@ -1,4 +1,4 @@
-define(["../helpers/RESTfulHelper", "../business/ToDoBO"], function(RESTfulHelper, ToDoBO){
+define(["../helpers/RESTfulHelper", "../business/ToDoBO_WebDB"], function(RESTfulHelper, ToDoBO){
 	var _this = {
 			
 			/**

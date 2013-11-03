@@ -1,10 +1,11 @@
-define(["../dao/ToDoDAO", "../models/ToDoBean", "../views/ToDoView"], function(ToDoDAO, ToDoBean, ToDoView){
+define(["../dao/ToDoDAO_IndexedDB", "../models/ToDoBean", "../views/ToDoView"], function(ToDoDAOIndexedDB, ToDoBean, ToDoView){
 	var _this = {
 
 			/**
 			 * ToDoList Start
 			 */
 			getStart : function(){
+				console.log('\n###################################');
 				console.log('ToDoList Start...');
 				this.getToDoList();
 			},
@@ -14,9 +15,10 @@ define(["../dao/ToDoDAO", "../models/ToDoBean", "../views/ToDoView"], function(T
 			 */
 			getToDoList : function(){
 				var table = '';
-				ToDoDAO.getTodoList(function(resultSet){
+				ToDoDAOIndexedDB.getTodoList(function(resultSet){
 					if (resultSet) {
 						table += ToDoView.getLineList(new ToDoBean(resultSet.value));
+						console.log(resultSet.value);
 						resultSet.continue();
 					} else{
 						$('#todoListContent').html(table);
@@ -29,7 +31,7 @@ define(["../dao/ToDoDAO", "../models/ToDoBean", "../views/ToDoView"], function(T
 			 */
 			getUrgent : function(){
 				var table = '';
-				ToDoDAO.getTodoUrgentList(function(resultSet){
+				ToDoDAOIndexedDB.getTodoUrgentList(function(resultSet){
 					if (resultSet) {
 						table += ToDoView.getLineList(new ToDoBean(resultSet.value));
 						resultSet.continue();
@@ -44,7 +46,7 @@ define(["../dao/ToDoDAO", "../models/ToDoBean", "../views/ToDoView"], function(T
 			 */
 			getCancelled : function(){
 				var table = '';
-				ToDoDAO.getTodoCancelledList(function(resultSet){
+				ToDoDAOIndexedDB.getTodoCancelledList(function(resultSet){
 					if (resultSet) {
 						table += ToDoView.getLineList(new ToDoBean(resultSet.value));
 						resultSet.continue();
