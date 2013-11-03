@@ -1,4 +1,4 @@
-define(["../helpers/RESTfulHelper", "../business/ToDoBO_WebDB"], function(RESTfulHelper, ToDoBO){
+define(["../helpers/RESTfulHelper", "../business/ToDoBO"], function(RESTfulHelper, ToDoBO){
 	var _this = {
 			
 			/**
@@ -53,6 +53,10 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO_WebDB"], function(RESTfu
 			 */
 			getCancelled : function(){
 				ToDoBO.getCancelled(arguments);
+			},
+			
+			getFormNew : function(){
+				ToDoBO.getFormNew(arguments);
 			}
 			
 	};

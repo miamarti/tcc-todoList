@@ -115,7 +115,7 @@
                         };
                         
                         /*
-                         * Bind an event handler to the “click” JavaScript event, or trigger that event on an element.
+                         * Bind an event handler to the ï¿½clickï¿½ JavaScript event, or trigger that event on an element.
                          * */
                         this.click = function(callback){
                                 if(constructor.length == undefined){
@@ -369,7 +369,7 @@
                         };
                         
                         /*
-                         * Bind an event handler to the “scroll” JavaScript event, or trigger that event on an element.
+                         * Bind an event handler to the ï¿½scrollï¿½ JavaScript event, or trigger that event on an element.
                          * Scroll link
                          * */
                         this.scroll = function() {
@@ -387,10 +387,10 @@
                          * */
                         this.addClass = function(data) {
                                 if(constructor.length == undefined){
-                                        this.constructor.className += data;
+                                        this.constructor.className += ' ' + data;
                                 } else{
                                         [].map.call(this.constructor, function(obj){
-                                                obj.className += data;
+                                                obj.className += ' ' + data;
                                         });
                                 }
                         };
