@@ -1,6 +1,14 @@
 define(function(){
 	return function(){
-		this.config = (arguments.length == 1)?arguments[0]:{title : "Go to japan", plannedTo : "Someday", urgent : "true", enabled : "true"};
+		this.config = (arguments.length == 1)?arguments[0]:{id: 0, title : "Go to japan", plannedTo : "Someday", urgent : "true", enabled : "true"};
+		
+		this.setId = function(value){
+			this.config.id = value;
+		};
+		
+		this.getId = function(){
+			return this.config.id;
+		};
 		
 		this.setTitle = function(value){
 			this.config.title = value;

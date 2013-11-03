@@ -1,8 +1,8 @@
-define(["../helpers/helpers", "../dao/DataBase/ToDoDataBase", "../models/ToDoBean"], function(helpers, ToDoDataBase, ToDoBean){
+define(["../helpers/helpers", "../dao/DataBase/ToDoIndexedDB"], function(helpers, ToDoIndexedDB){
 	return {
 		
 		getTodoList : function(callback){
-			ToDoDataBase.getInstance(function(conn){
+			ToDoIndexedDB.getInstance(function(conn){
 				var transaction = conn.transaction("ToDoList", "readwrite");
 				var store = transaction.objectStore("ToDoList");
 				
@@ -15,7 +15,7 @@ define(["../helpers/helpers", "../dao/DataBase/ToDoDataBase", "../models/ToDoBea
 		},
 		
 		getTodoUrgentList : function(callback){
-			ToDoDataBase.getInstance(function(conn){
+			ToDoIndexedDB.getInstance(function(conn){
 				var transaction = conn.transaction("ToDoList", "readwrite");
 				var store = transaction.objectStore("ToDoList");
 				var index = store.index("by_urgent");
@@ -29,7 +29,7 @@ define(["../helpers/helpers", "../dao/DataBase/ToDoDataBase", "../models/ToDoBea
 		},
 		
 		getTodoCancelledList : function(callback){
-			ToDoDataBase.getInstance(function(conn){
+			ToDoIndexedDB.getInstance(function(conn){
 				var transaction = conn.transaction("ToDoList", "readwrite");
 				var store = transaction.objectStore("ToDoList");
 				var index = store.index("by_enabled");
