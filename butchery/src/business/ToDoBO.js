@@ -48,6 +48,16 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 					}
 					$('#todoListContent').html(table);
 				});
+			},
+			
+			getFormNew : function(){
+				$('#container').addClass('blur');
+				$('#upperBlade').removeClass('hide');
+			},
+			
+			closeFormNew : function(){
+				$('#container').removeClass('blur');
+				$('#upperBlade').addClass('hide');
 			}
 	
 		};
