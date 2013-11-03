@@ -5,9 +5,10 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 			 * ToDoList Start
 			 */
 			getStart : function(){
-				console.log('\n###################################');
-				console.log('ToDoList Start...');
 				this.getToDoList();
+				ToDoView.setBackground('womanly');
+				ToDoView.getBackground();
+				console.log('ToDoList Start...');
 			},
 			
 			/**
@@ -18,7 +19,6 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 					var table = '';
 					for(var i=0; i < resultSet.length; i++){
 						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
-						console.log(resultSet.item(i));
 					}
 					$('#todoListContent').html(table);
 				});
@@ -32,7 +32,6 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 					var table = '';
 					for(var i=0; i < resultSet.length; i++){
 						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
-						console.log(resultSet.item(i));
 					}
 					$('#todoListContent').html(table);
 				});
@@ -46,7 +45,6 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 					var table = '';
 					for(var i=0; i < resultSet.length; i++){
 						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
-						console.log(resultSet.item(i));
 					}
 					$('#todoListContent').html(table);
 				});
