@@ -29,8 +29,11 @@ define(function(){
 				    			  "todo(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL, plannedTo TEXT, urgent TEXT  DEFAULT (\'false\'), enabled TEXT  DEFAULT (\'true\'))", [], this.onSuccess, this.onError);
 				    
 				    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Revisar issues no github','Someday','true','false'], this.onSuccess, this.onError);
-				    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Preparar fundamentação teórica do TCC','When der','false','false'], this.onSuccess, this.onError);
-				    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Enviar email ao chefe','As soon as possible','true','true'], this.onSuccess, this.onError);
+                                    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Preparar fundamentação teórica do TCC','When der','false','false'], this.onSuccess, this.onError);
+                                    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Enviar email ao chefe','As soon as possible','true','true'], this.onSuccess, this.onError);
+                                    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Reunião de fechamento do mês','Someday','false','false'], this.onSuccess, this.onError);
+                                    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Formatar monografia','Someday','true','true'], this.onSuccess, this.onError);
+                                    tx.executeSql('insert into todo ("id", "title", "plannedTo", "urgent", "enabled") values (NULL, ?, ?, ?, ?);', ['Realizar testes','Someday','true','true'], this.onSuccess, this.onError);
 				    localStorage.setItem('firsCconnection', true);
 				    console.log('firsCconnection start');
 				});
