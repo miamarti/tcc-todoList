@@ -20,23 +20,35 @@ define(function(){
 				
 				//initial data
 				store.put({
-					title : "Go to japan",
-					plannedTo : "Someday",
-					urgent : "true",
-					enabled : "false"
-				});
-				store.put({
-					title : "Buy a bladder caramel",
-					plannedTo : "When der",
-					urgent : "false",
-					enabled : "false"
-				});
-				store.put({
-					title : "Trample President Dilma",
-					plannedTo : "As soon as possible",
-					urgent : "true",
-					enabled : "true"
-				});
+                                        title : "Consulta Médica",
+                                        plannedTo : "Someday",
+                                        urgent : "false",
+                                        enabled : "true"
+                                });
+                                store.put({
+                                        title : "Reunião com o Diretor",
+                                        plannedTo : "When der",
+                                        urgent : "true",
+                                        enabled : "true"
+                                });
+                                store.put({
+                                        title : "Formatar monografia",
+                                        plannedTo : "As soon as possible",
+                                        urgent : "true",
+                                        enabled : "true"
+                                });
+                                store.put({
+                                        title : "Criar diagrama de classes",
+                                        plannedTo : "As soon as possible",
+                                        urgent : "false",
+                                        enabled : "true"
+                                });
+                                store.put({
+                                        title : "Criar protótipos de tela",
+                                        plannedTo : "As soon as possible",
+                                        urgent : "true",
+                                        enabled : "true"
+                                });
 			},
 			
 			deleteDatabase: function(name){
