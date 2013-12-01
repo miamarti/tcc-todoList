@@ -25,6 +25,7 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO"], function(RESTfulHelpe
 			 */
 			setEventListeners : function(){
 				document.body.addEventListener('click',_this.objReflection);
+				document.body.addEventListener('touchend',_this.objReflection);
 			},
 
 			/**
