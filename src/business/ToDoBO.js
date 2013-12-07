@@ -50,14 +50,12 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 				});
 			},
 			
-			getFormNew : function(){
-				$('#container').addClass('blur');
-				$('#upperBlade').removeClass('hide');
-			},
-			
-			closeFormNew : function(){
-				$('#container').removeClass('blur');
-				$('#upperBlade').addClass('hide');
+			setNewItem : function(bean){
+				try{
+					ToDoDAOWebDB.setNewItem(bean);
+					alert("add ok!");
+				}finally{}
+				
 			}
 	
 		};

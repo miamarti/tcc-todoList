@@ -31,7 +31,7 @@
 					<span><br><a href="#">All</a> | <a href="#">Today</a> </span>
 					<span><br><a href="#">Urgent</a> | <a href="#">Canceled</a></span><br>
 					<nav>
-						<span id="custom-current" class="custom-current" data-controller="#ToDoBO/getFormNew"></span>
+						<span id="custom-current" class="custom-current" data-controller="#_this/getFormNew"></span>
 					</nav>
 				</h3>
 			</div>
@@ -65,9 +65,11 @@
 			</h2>
 		</div>
 		<hr class="style-seven margin-10">
-		<i class="fa fa-times-circle-o" data-controller="#ToDoBO/closeFormNew"></i>
+		
 		<input type="text" id="inputTitle" class="inputText" placeholder="REPORT TITLE">
-		<i class="fa fa-sign-in"></i>
+		<input type="text" id="inputDate" class="inputText" placeholder="dd/MM/yyyy"><br/>
+		<i class="fa fa-times-circle-o" data-controller="#_this/closeFormNew"></i>
+		<i class="fa fa-sign-in" data-controller="#_this/setNewItem"></i>
 	</div>
 
 </body>

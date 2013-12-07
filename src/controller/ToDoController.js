@@ -1,4 +1,4 @@
-define(["../helpers/RESTfulHelper", "../business/ToDoBO"], function(RESTfulHelper, ToDoBO){
+define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "../models/ToDoBean"], function(RESTfulHelper, ToDoBO, ToDoView, ToDoBean){
 	var _this = {
 			
 			/**
@@ -6,6 +6,7 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO"], function(RESTfulHelpe
 			 */
 			reflection : function(rflt){
 				try {
+					console.log(rflt);
 					(rflt.content.length == 1)?eval(rflt.controller + '.' + rflt.content.obj + '();'):eval(rflt.controller + '.' + rflt.content.obj + '(' + rflt.content.args + ');');
 				} finally {}
 			},
@@ -57,7 +58,20 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO"], function(RESTfulHelpe
 			},
 			
 			getFormNew : function(){
-				ToDoBO.getFormNew(arguments);
+				ToDoView.getFormNew(arguments);
+			},
+			
+			closeFormNew :function(){
+				ToDoView.closeFormNew(arguments);
+			},
+			
+			setNewItem :function(){
+				var bean = new ToDoBean();
+				bean.setTitle($('#inputTitle').val());
+				bean.setPlannedTo($('#inputDate').val());
+				ToDoBO.setNewItem(bean);
+				_this.closeFormNew(arguments);
+				_this.getToDoList(arguments);
 			}
 			
 	};
