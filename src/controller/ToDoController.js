@@ -58,13 +58,6 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			},
 			
 			getFormNew : function(){
-				var teste = document.getElementById('#chkUrgent');
-				console.log(teste);
-				/*if()
-					console.log("a");
-				else
-					console.log("b");*/
-					
 				ToDoView.getFormNew(arguments);
 			},
 			
@@ -76,10 +69,8 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 				var bean = new ToDoBean();
 				bean.setTitle($('#inputTitle').val());
 				bean.setPlannedTo($('#inputDate').val());
+				bean.setUrgent(document.getElementById('chkUrgent').checked);
 				
-				/*	console.log('a');
-				else
-					console.log('b');*/
 				ToDoBO.setNewItem(bean);
 				_this.closeFormNew(arguments);
 				_this.getToDoList(arguments);
