@@ -15,7 +15,7 @@ define(function(){
 			
 			getInstance: function(callback){
 				
-				_this.setClear();
+				//_this.setClear();
 				
 				this.webdb.connection = openDatabase("TodoDB", "1", "Todo manager", (5 * 1024 * 1024)); // 5MB
 				if(localStorage.firstConnection == undefined){
