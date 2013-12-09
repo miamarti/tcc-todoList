@@ -16,7 +16,7 @@ define(["../dao/DataBase/ToDoWebDB"], function(ToDoWebDB){
 			
 			ToDoWebDB.getInstance(function(db){
 				db.connection.transaction(function(tx) {
-					tx.executeSql('insert into todo ("title", "plannedTo", "urgent", "enabled") values (?, ?, ?, ?);', [bean.getTitle(),bean.getPlannedTo(),'true','true'], 
+					tx.executeSql('insert into todo ("title", "plannedTo", "urgent", "enabled") values (?, ?, ?, ?);', [bean.getTitle(),bean.getPlannedTo(), bean.getUrgent() + '','true'], 
 							ToDoWebDB.onSuccess, ToDoWebDB.onError);
 				});
 			});
