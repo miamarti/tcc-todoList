@@ -25,10 +25,23 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 			},
 			
 			/**
+			 * List events list
+			 */
+			getAll : function(){
+				ToDoDAOWebDB.getAll(function(resultSet){
+					var table = '';
+					for(var i=0; i < resultSet.length; i++){
+						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
+					}
+					$('#todoListContent').html(table);
+				});
+			},
+			
+			/**
 			 * List events list urgent
 			 */
 			getUrgent : function(){
-				ToDoDAOWebDB.getTodoList(function(resultSet){
+				ToDoDAOWebDB.getUrgent(function(resultSet){
 					var table = '';
 					for(var i=0; i < resultSet.length; i++){
 						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
