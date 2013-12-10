@@ -44,6 +44,13 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			},
 			
 			/**
+			 * Get List
+			 */
+			getAll : function(){
+				ToDoBO.getAll(arguments);
+			},
+			
+			/**
 			 * Get Urgent List
 			 */
 			getUrgent : function(){
