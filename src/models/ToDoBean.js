@@ -31,7 +31,7 @@ define(function(){
 		};
 		
 		this.getUrgent = function(){
-			return (this.config.urgent) === 'true'?'<i class="fa fa-fire"></i>':'';
+			return this.config.urgent;
 		};
 		
 		this.setEnabled = function(value){
@@ -39,7 +39,7 @@ define(function(){
 		};
 		
 		this.getEnabled = function(){
-			return (this.config.enabled) === 'true'?['','']:['<del>','</del>'];
+			return this.config.enabled;
 		};
 	};
 });	
