@@ -1,7 +1,7 @@
 define(function(){
 	var _this = {
 		getLineList: function(toDoBean){
-			return '<div data-id="' + toDoBean.getId() + '"><span class="fc-titleList">' + ((this.config.enabled) === 'true'?'':'<del>') + ' ' + toDoBean.getTitle() + ' - ' + toDoBean.getPlannedTo() + ((this.config.enabled) === 'true'?'':'</del>') + '</span><span class="fc-icons">' + ((toDoBean.getUrgent()==='true')?'<i class="fa fa-fire"></i>':'') + '</span></div>';
+			return '<div data-id="' + toDoBean.getId() + '"><span class="fc-titleList">' /*+ ((this.config.enabled) === 'true'?'':'<del>') */+ ' ' + toDoBean.getTitle() + ' - ' + toDoBean.getPlannedTo() /*+ ((this.config.enabled) === 'true'?'':'</del>')*/ + '</span><span class="fc-icons">' + ((toDoBean.getUrgent()==='true')?'<i class="fa fa-fire"></i>':'') + '</span></div>';
 		},
 		
 		renderBackground: function(value){
