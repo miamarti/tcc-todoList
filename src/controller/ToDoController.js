@@ -81,6 +81,14 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 				ToDoBO.setNewItem(bean);
 				_this.closeFormNew(arguments);
 				_this.getToDoList(arguments);
+			},
+			
+			getFormEdit : function(){
+				ToDoView.getFormEdit(arguments);
+			},
+			
+			closeFormEdit :function(){
+				ToDoView.closeFormEdit(arguments);
 			}
 			
 	};
