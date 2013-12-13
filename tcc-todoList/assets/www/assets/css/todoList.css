@@ -29,19 +29,20 @@ html { height: 100%; }
 html, body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 13px;
     color: #333;
 	height: auto;
 	
-/* 	background: #cebe29; */
-/* 	background: -moz-linear-gradient(-45deg, #cebe29 0%, #9b1f50 33%, #2989d8 71%, #89b4ff 91%); */
-/* 	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#cebe29), color-stop(33%,#9b1f50), color-stop(71%,#2989d8), color-stop(91%,#89b4ff)); */
-/* 	background: -webkit-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); */
-/* 	background: -o-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); */
-/* 	background: -ms-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); */
-/* 	background: linear-gradient(135deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); */
-/* 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebe29', endColorstr='#89b4ff',GradientType=1 ); */
+ 	background: #cebe29; 
+ 	background: -moz-linear-gradient(-45deg, #cebe29 0%, #9b1f50 33%, #2989d8 71%, #89b4ff 91%); 
+ 	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#cebe29), color-stop(33%,#9b1f50), color-stop(71%,#2989d8), color-stop(91%,#89b4ff)); 
+ 	background: -webkit-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	background: -o-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	background: -ms-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	background: linear-gradient(135deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebe29', endColorstr='#89b4ff',GradientType=1 ); 
 
+/*
 	background: #cebe29;
 	background: -moz-linear-gradient(-45deg, #000000 0%, #7F7F7F 33%, #3E466A 71%, #89b4ff 91%);
 	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#000000), color-stop(33%,#7F7F7F), color-stop(71%,#3E466A), color-stop(91%,#89b4ff));
@@ -50,6 +51,7 @@ html, body {
 	background: -ms-linear-gradient(-45deg, #000000 0%,#7F7F7F 33%,#3E466A 71%,#89b4ff 91%);
 	background: linear-gradient(135deg, #000000 0%,#7F7F7F 33%,#3E466A 71%,#89b4ff 91%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#3E466A',GradientType=1 );
+*/
 
 	-webkit-background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
@@ -59,7 +61,7 @@ html, body {
 html,body,.container {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 13px;
     color: #333;
 	height: auto;
 }
@@ -158,13 +160,13 @@ a {
 }
 
 .custom-header h3 {
-	width: 40%;
+	/*width: 40%;*/
 	color: #ddd;
 	color: rgba(255,255,255,0.6);
 	font-weight: 300;
 	line-height: 30px;
-	text-align: right;
-	padding-right: 125px;
+/* 	text-align: right; */
+/*	padding-right: 125px;*/
 }
 
 .custom-header nav {
@@ -395,8 +397,15 @@ html, body, .container {
 .custom-header h3 {
 	float: none;
 	width: auto;
-	text-align: left;
-	padding-right: 100px;
+	/* text-align: left; */
+	/* padding-right: 100px; */
+}
+
+.custom-header h3 a{
+	padding-right: 0px !important;
+	font-size: 10px;
+	color: #FFF;
+	letter-spacing: 1px;
 }
 
 .fc-todoList .fc-row,
@@ -490,6 +499,15 @@ html, body, .container {
 	text-align: center;
 	padding: 20px;
 	color: #FFF;
+	
+ 	background: #cebe29; 
+ 	background: -moz-linear-gradient(-45deg, #cebe29 0%, #9b1f50 33%, #2989d8 71%, #89b4ff 91%); 
+ 	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#cebe29), color-stop(33%,#9b1f50), color-stop(71%,#2989d8), color-stop(91%,#89b4ff)); 
+ 	background: -webkit-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	background: -o-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	background: -ms-linear-gradient(-45deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	background: linear-gradient(135deg, #cebe29 0%,#9b1f50 33%,#2989d8 71%,#89b4ff 91%); 
+ 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebe29', endColorstr='#89b4ff',GradientType=1 ); 
 }
 
 #formCrud .fa-times-circle-o{
@@ -526,6 +544,25 @@ html, body, .container {
 }
 
 #formCrud input[type="date"]{
+	height: 45px;
+	width: 70%;
+	padding: 10px;
+	background: #FFF;
+	border: solid 1px #FFF;
+	color: #000;
+	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: inset 0px 0px 10px #000000;
+	-webkit-box-shadow: inset 0px 0px 10px #000000;
+	box-shadow: inset 0px 0px 10px #000000;
+	opacity: 0.6;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 60);
+	filter: alpha(opacity = 60);
+}
+
+#formCrud input[type="checkbox"]{
 	height: 45px;
 	width: 70%;
 	padding: 10px;
@@ -622,4 +659,25 @@ hr.style-one {
     background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc); 
     background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
     background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
+}
+
+#inputTitle{
+	margin-left: 5px;
+	width: 60% !important;
+	display: inline-block;
+	float: left;
+}
+
+#inputDate{
+	margin-left: 5px;
+	width: 20% !important;
+	display: inline-block;
+	float: left;
+}
+
+#chkUrgent{
+	margin-left: 15px;
+	width: 35px !important;
+	display: inline-block;
+	float: left;
 }
