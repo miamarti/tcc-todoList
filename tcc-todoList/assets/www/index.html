@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/todoList.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/custom_1.css" /> -->
+
+<script data-symbol="$" src="http://clever--code.github.io/iQuery/iquery-1.7.mini.js"></script>
+<link rel="stylesheet" href="assets/font-awesome-4.0.1/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/todoList.css" />
+<script data-main="src/controller/FrontController" src="http://clever--code.github.io/butchery/butchery-0.5.mini.js"></script>
+</head>
+<body>
+
+	<div id="container" class="container">
+
+		<div class="custom-todoList-wrap custom-todoList-full">
+			<div class="custom-header clearfix">
+				<h2>
+					Simple Task Helper 
+				</h2>
+				<h3 class="custom-month-year">
+					<span id="custom-month" class="custom-month">The simple simple </span> <span
+						id="custom-year" class="custom-year">list</span>
+					<span><br><a href="#ToDoController/getAll">All</a> | <a href="#ToDoController/getToDoList">Today</a> </span>
+					<span><br><a href="#ToDoController/getUrgent">Urgent</a> | <a href="#">Canceled</a></span><br>
+					<nav>
+						<span id="custom-current" class="custom-current" data-controller="#_this/getFormNew"></span>
+					</nav>
+				</h3>
+			</div>
+			
+			<div id="todoList" class="fc-todoList-container">
+				<div class="fc-todoList fc-five-rows">
+					<div class="fc-body">
+						<div class="fc-row" id="todoListContent"></div>
+						<div class="fc-row">
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+							<div><span class="fc-date"></span><span class="fc-icons"></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="formCrud" class="hide">
+		<div class="custom-header clearfix">
+			<h2>
+				todoList
+			</h2>
+		</div>
+		<hr class="style-seven margin-10">
+		
+		<input type="text" id="inputTitle" class="inputText" placeholder="Insira aqui o título">
+		<input type="text" id="inputDate" class="inputText" placeholder="dd/MM/yyyy"><br/>
+		<input type="checkbox" id="chkUrgent">Urgente<br/>
+		<i id="btnCloseAdd" class="fa fa-times-circle-o hide" data-controller="#_this/closeFormNew"></i>
+		<i id="btnSaveAdd" class="fa fa-sign-in hide" data-controller="#_this/setNewItem"></i>
+		<i id="btnCloseEdit" class="fa fa-times-circle-o hide" data-controller="#_this/closeFormNew"></i>
+		<i id="btnSaveEdit" class="fa fa-sign-in hide" data-controller="#_this/setNewItem"></i>
+	</div>
+
+</body>
+</html>

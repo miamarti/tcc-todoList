@@ -1,0 +1,7 @@
+html, body {
+	background: #f9f9f9 url(../images/bg.jpg);
+	
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
