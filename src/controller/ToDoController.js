@@ -65,11 +65,13 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			},
 			
 			getFormNew : function(){
-				ToDoView.getFormNew(arguments);
+				ToDoView.getForm(arguments);
+				ToDoView.getFormAdd(arguments);
 			},
 			
 			closeFormNew :function(){
-				ToDoView.closeFormNew(arguments);
+				ToDoView.closeForm(arguments);
+				ToDoView.closeFormAdd(arguments);
 			},
 			
 			setNewItem :function(){
@@ -83,11 +85,15 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 				_this.getToDoList(arguments);
 			},
 			
-			getFormEdit : function(){
+			getFormEdit : function(id){
+				ToDoView.getForm(arguments);
 				ToDoView.getFormEdit(arguments);
+				ToDoBO.getItemById(id);
+				
 			},
 			
 			closeFormEdit :function(){
+				ToDoView.closeForm(arguments);
 				ToDoView.closeFormEdit(arguments);
 			}
 			

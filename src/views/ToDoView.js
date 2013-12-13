@@ -1,7 +1,7 @@
 define(function(){
 	var _this = {
 		getLineList: function(toDoBean){
-			return '<div data-id="' + toDoBean.getId() + '" data-controler="#_this/getFormEdit"><span class="fc-titleList">' /*+ ((this.config.enabled) === 'true'?'':'<del>') */+ ' ' + toDoBean.getTitle() + ' - ' + toDoBean.getPlannedTo() /*+ ((this.config.enabled) === 'true'?'':'</del>')*/ + '</span><span class="fc-icons">' + ((toDoBean.getUrgent()==='true')?'<i class="fa fa-fire"></i>':'') + '</span></div>';
+			return '<div data-id="' + toDoBean.getId() + '"><span class="fc-titleList" data-controller="#_this/getFormEdit/'+ toDoBean.getId() +'">' /*+ ((this.config.enabled) === 'true'?'':'<del>') */+ ' ' + toDoBean.getTitle() + ' - ' + toDoBean.getPlannedTo() /*+ ((this.config.enabled) === 'true'?'':'</del>')*/ + '</span><span class="fc-icons">' + ((toDoBean.getUrgent()==='true')?'<i class="fa fa-fire"></i>':'') + '</span></div>';
 		},
 		
 		renderBackground: function(value){
@@ -25,24 +25,46 @@ define(function(){
 			this.renderBackground(value);
 		},
 		
-		getFormNew : function(){
+		getForm : function(){
 			$('#container').addClass('blur');
-			$('#formAdd').removeClass('hide');
+			$('#formCrud').removeClass('hide');
 		},
-		
-		closeFormNew : function(){
-			$('#container').removeClass('blur');
-			$('#formAdd').addClass('hide');
+		getFormAdd : function(){
+			$('#btnSaveAdd').removeClass('hide');
+			$('#btnCloseAdd').removeClass('hide');
 		},
-		
 		getFormEdit : function(){
-			$('#container').addClass('blur');
-			$('#formEdit').removeClass('hide');
+			$('#btnSaveEdit').removeClass('hide');
+			$('#btnCloseEdit').removeClass('hide');
 		},
 		
-		closeFormEdit : function(){
+		setFormEdit : function(bean){
+			document.getElementById('inputTitle').value=bean.getTitle();
+			document.getElementById('inputDate').value=bean.getPlannedTo();
+			if(bean.getUrgent()=='false')
+				document.getElementById('chkUrgent').checked = false;
+			else
+				document.getElementById('chkUrgent').checked = true;
+				
+		},
+		
+		closeForm : function(){
+			document.getElementById('inputTitle').value='';
+			document.getElementById('inputDate').value='';
+			document.getElementById('chkUrgent').checked = false;
 			$('#container').removeClass('blur');
-			$('#formEdit').addClass('hide');
+			$('#formCrud').addClass('hide');
+		},
+		closeFormAdd : function(){
+			$('#btnSaveAdd').addClass('hide');
+			$('#btnCloseAdd').addClass('hide');
+		},
+		closeFormEdit : function(){
+			$('#btnSaveEdit').addClass('hide');
+			$('#btnCloseEdit').addClass('hide');
+		},
+		clearForm : function(){
+
 		}
 	};
 	return _this;
