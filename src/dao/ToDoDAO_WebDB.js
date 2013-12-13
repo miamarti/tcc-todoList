@@ -29,6 +29,15 @@ define(["../dao/DataBase/ToDoWebDB"], function(ToDoWebDB){
 				});
 			});
 		},
+		getItemById : function(id,callback){
+			ToDoWebDB.getInstance(function(db){
+				db.connection.transaction(function(tx) {
+					tx.executeSql("SELECT * FROM todo where id = ?", [id], function(tx, rs){
+						callback(rs.rows);
+					}, db.onError);
+				});
+			});
+		},
 		
 		setNewItem : function(bean){
 			console.log(bean.getTitle());

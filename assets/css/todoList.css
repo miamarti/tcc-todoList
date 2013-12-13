@@ -480,7 +480,7 @@ html, body, .container {
 	filter: blur(3px);
 }
 
-#upperBlade{
+#formCrud{
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -492,21 +492,21 @@ html, body, .container {
 	color: #FFF;
 }
 
-#upperBlade .fa-times-circle-o{
+#formCrud .fa-times-circle-o{
 	float: left;
 	color: #FFF;
 	font-size: 50px;
 	cursor: pointer;
 }
 
-#upperBlade .fa-sign-in{
+#formCrud .fa-sign-in{
 	float: right;
 	color: #FFF;
 	font-size: 50px;
 	cursor: pointer;
 }
 
-#upperBlade input[type="text"]{
+#formCrud input[type="text"]{
 	height: 45px;
 	width: 70%;
 	padding: 10px;
@@ -525,7 +525,7 @@ html, body, .container {
 	filter: alpha(opacity = 60);
 }
 
-#upperBlade input[type="date"]{
+#formCrud input[type="date"]{
 	height: 45px;
 	width: 70%;
 	padding: 10px;

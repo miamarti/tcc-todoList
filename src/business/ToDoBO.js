@@ -62,11 +62,15 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 					$('#todoListContent').html(table);
 				});
 			},
+			getItemById : function(id){
+				ToDoDAOWebDB.getItemById(id,function(resultSet){
+					ToDoView.setFormEdit(new ToDoBean(resultSet.item(0)));
+				});
+			},
 			
 			setNewItem : function(bean){
 				try{
 					ToDoDAOWebDB.setNewItem(bean);
-					alert("add ok!");
 				}finally{}
 				
 			}

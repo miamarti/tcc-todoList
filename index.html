@@ -58,7 +58,7 @@
 
 	</div>
 
-	<div id="formAdd" class="hide">
+	<div id="formCrud" class="hide">
 		<div class="custom-header clearfix">
 			<h2>
 				todoList
@@ -67,25 +67,12 @@
 		<hr class="style-seven margin-10">
 		
 		<input type="text" id="inputTitle" class="inputText" placeholder="Insira aqui o título">
-		<input type="date" id="inputDate" class="inputText" placeholder="dd/MM/yyyy"><br/>
+		<input type="text" id="inputDate" class="inputText" placeholder="dd/MM/yyyy"><br/>
 		<input type="checkbox" id="chkUrgent">Urgente<br/>
-		<i class="fa fa-times-circle-o" data-controller="#_this/closeFormNew"></i>
-		<i class="fa fa-sign-in" data-controller="#_this/setNewItem"></i>
-	</div>
-	
-	<div id="formEdit" class="hide">
-		<div class="custom-header clearfix">
-			<h2>
-				todoList
-			</h2>
-		</div>
-		<hr class="style-seven margin-10">
-		
-		<input type="text" id="inputTitleEdit" class="inputText" placeholder="Insira aqui o título">
-		<input type="date" id="inputDateEdit" class="inputText" placeholder="dd/MM/yyyy"><br/>
-		<input type="checkbox" id="chkUrgentEdit">Urgente<br/>
-		<i class="fa fa-times-circle-o" data-controller="#_this/getFormEdit"></i>
-		<i class="fa fa-sign-in" data-controller="#_this/setNewItem"></i>
+		<i id="btnCloseAdd" class="fa fa-times-circle-o hide" data-controller="#_this/closeFormNew"></i>
+		<i id="btnSaveAdd" class="fa fa-sign-in hide" data-controller="#_this/setNewItem"></i>
+		<i id="btnCloseEdit" class="fa fa-times-circle-o hide" data-controller="#_this/closeFormNew"></i>
+		<i id="btnSaveEdit" class="fa fa-sign-in hide" data-controller="#_this/setNewItem"></i>
 	</div>
 
 </body>
