@@ -33,7 +33,7 @@
     <access origin="*"/>
 
 <!--     <content src="http://miamarti.github.io/tcc-todoList/" /> -->
-    <content src="index.html" />
+    <content src="index.html#ToDoController/getAll" />
 
     <preference name="loglevel" value="DEBUG" />
     <!--
@@ -101,6 +101,9 @@
     <feature name="InAppBrowser">
       <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
     </feature>
+	<feature name="Calendar">
+	  <param name="android-package" value="nl.xservices.plugins.Calendar" />
+	</feature>
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
     </plugins>

@@ -15,14 +15,17 @@ require(["../helpers/RESTfulHelper", "../controller/ToDoController"],function (R
 			locationHashChanged : function(event) {
 				var content = RESTfulHelper.parser(location.hash);
 				_this.reflection({"controller":content.controller, "content":content});
-				try { event.preventDefault(); } catch (e) {}
+				try { 
+					event.preventDefault();
+//					location.reload();
+				} catch (e) {}
 			},
 			
 			/**
 			 * Management Requirements
 			 */
 			service : function(){
-				window.addEventListener("hashchange", _this.locationHashChanged, false);
+				window.addEventListener("hashchange", _this.locationHashChanged, true);
 				if(location.hash != ''){ _this.locationHashChanged(); }
 			}
 			

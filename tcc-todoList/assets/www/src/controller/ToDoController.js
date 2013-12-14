@@ -6,7 +6,6 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			 */
 			reflection : function(rflt){
 				try {
-					console.log(rflt);
 					(rflt.content.length == 1)?eval(rflt.controller + '.' + rflt.content.obj + '();'):eval(rflt.controller + '.' + rflt.content.obj + '(' + rflt.content.args + ');');
 				} finally {}
 			},
@@ -72,6 +71,7 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			closeFormNew :function(){
 				ToDoView.closeForm(arguments);
 				ToDoView.closeFormAdd(arguments);
+				_this.getAll();
 			},
 			
 			setNewItem :function(){
@@ -82,7 +82,8 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 				
 				ToDoBO.setNewItem(bean);
 				_this.closeFormNew(arguments);
-				_this.getToDoList(arguments);
+//				_this.getToDoList(arguments);
+				_this.getAll();
 			},
 			
 			getFormEdit : function(id){
@@ -95,6 +96,7 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			closeFormEdit :function(){
 				ToDoView.closeForm(arguments);
 				ToDoView.closeFormEdit(arguments);
+				_this.getAll();
 			}
 			
 	};
