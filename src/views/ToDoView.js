@@ -1,7 +1,7 @@
 define(function(){
 	var _this = {
 		getLineList: function(toDoBean){
-			return '<div data-id="' + toDoBean.getId() + '"><span class="fc-titleList" data-controller="#_this/getFormEdit/'+ toDoBean.getId() +'">' /*+ ((this.config.enabled) === 'true'?'':'<del>') */+ ' ' + toDoBean.getTitle() + ' - ' + toDoBean.getPlannedTo() /*+ ((this.config.enabled) === 'true'?'':'</del>')*/ + '</span><span class="fc-icons">' + ((toDoBean.getUrgent()==='true')?'<i class="fa fa-fire"></i>':'') + '</span></div>';
+			return '<div data-id="' + toDoBean.getId() + '"><span class="fc-titleList" data-controller="#_this/getFormEdit/'+ toDoBean.getId() +'">' + ((toDoBean.getDone()) === 'true'?'<i>':'') + ((toDoBean.getEnabled()) === 'true'?'':'<del>') + ' ' + toDoBean.getTitle() + ' - ' + toDoBean.getPlannedTo() + ((toDoBean.getEnabled()) === 'true'?'':'</del>') + ((toDoBean.getDone()) === 'true'?'</i>':'') + '</span><span class="fc-icons">' + ((toDoBean.getUrgent()==='true')?'<i class="fa fa-fire"></i>':'') + ((toDoBean.getDone()==='true')?'<i class="fa fa-check"></i>':'') + '</span></div>';
 		},
 		
 		renderBackground: function(value){
@@ -30,12 +30,16 @@ define(function(){
 			$('#formCrud').removeClass('hide');
 		},
 		getFormAdd : function(){
+			console.log('getAdd');
 			$('#btnSaveAdd').removeClass('hide');
 			$('#btnCloseAdd').removeClass('hide');
 		},
 		getFormEdit : function(){
+			console.log('getEdit');
 			$('#btnSaveEdit').removeClass('hide');
 			$('#btnCloseEdit').removeClass('hide');
+			$('#btnDone').removeClass('hide');
+			$('#btnCancel').removeClass('hide');
 		},
 		
 		setFormEdit : function(bean){
@@ -49,6 +53,7 @@ define(function(){
 		},
 		
 		closeForm : function(){
+			console.log('closeForm');
 			document.getElementById('inputTitle').value='';
 			document.getElementById('inputDate').value='';
 			document.getElementById('chkUrgent').checked = false;
@@ -56,15 +61,16 @@ define(function(){
 			$('#formCrud').addClass('hide');
 		},
 		closeFormAdd : function(){
+			console.log('closeFormAdd');
 			$('#btnSaveAdd').addClass('hide');
 			$('#btnCloseAdd').addClass('hide');
 		},
 		closeFormEdit : function(){
+			console.log('closeFormEdit');
 			$('#btnSaveEdit').addClass('hide');
 			$('#btnCloseEdit').addClass('hide');
-		},
-		clearForm : function(){
-
+			$('#btnDone').addClass('hide');
+			$('#btnCancel').addClass('hide');
 		}
 	};
 	return _this;

@@ -53,8 +53,8 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 			/**
 			 * List events list cancelled
 			 */
-			getCancelled : function(){
-				ToDoDAOWebDB.getTodoList(function(resultSet){
+			getCanceled : function(){
+				ToDoDAOWebDB.getCanceled(function(resultSet){
 					var table = '';
 					for(var i=0; i < resultSet.length; i++){
 						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
@@ -71,6 +71,28 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 			setNewItem : function(bean){
 				try{
 					ToDoDAOWebDB.setNewItem(bean);
+				}finally{}
+				
+			},
+			
+			setItem : function(bean){
+				console.log(bean.getId());
+				try{
+					ToDoDAOWebDB.setItem(bean);
+				}finally{}
+				
+			},
+			
+			setCanceled : function(id){
+				try{
+					ToDoDAOWebDB.setCanceled(id);
+				}finally{}
+				
+			},
+			
+			setDone : function(id){
+				try{
+					ToDoDAOWebDB.setDone(id);
 				}finally{}
 				
 			}

@@ -492,7 +492,14 @@ html, body, .container {
 	color: #FFF;
 }
 
-#formCrud .fa-times-circle-o{
+#formCrud .fa-times{
+	float: center;
+	color: #FFF;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+#formCrud .fa-arrow-circle-o-left{
 	float: left;
 	color: #FFF;
 	font-size: 50px;
@@ -501,6 +508,13 @@ html, body, .container {
 
 #formCrud .fa-sign-in{
 	float: right;
+	color: #FFF;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+#formCrud .fa-check{
+	float: center;
 	color: #FFF;
 	font-size: 50px;
 	cursor: pointer;

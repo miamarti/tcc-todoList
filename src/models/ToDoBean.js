@@ -1,6 +1,6 @@
 define(function(){
 	return function(){
-		this.config = (arguments.length == 1)?arguments[0]:{id: 0, title : "Go to japan", plannedTo : "01/01/1999", urgent : "true", enabled : "true"};
+		this.config = (arguments.length == 1)?arguments[0]:{id: 0, title : "Go to japan", plannedTo : "01/01/1999", urgent : "true", enabled : "true", done : "false"};
 		
 		this.setId = function(value){
 			this.config.id = value;
@@ -40,6 +40,14 @@ define(function(){
 		
 		this.getEnabled = function(){
 			return this.config.enabled;
+		};
+		
+		this.setDone = function(value){
+			this.config.done = value;
+		};
+		
+		this.getDone = function(){
+			return this.config.done;
 		};
 	};
 });	

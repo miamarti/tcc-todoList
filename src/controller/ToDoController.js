@@ -60,8 +60,8 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			/**
 			 * Get Cancelled List
 			 */
-			getCancelled : function(){
-				ToDoBO.getCancelled(arguments);
+			getCanceled : function(){
+				ToDoBO.getCanceled(arguments);
 			},
 			
 			getFormNew : function(){
@@ -85,9 +85,37 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 				_this.getToDoList(arguments);
 			},
 			
+			setItem :function(){
+				var bean = new ToDoBean();
+				bean.setId($('#hiddenId').val());
+				bean.setTitle($('#inputTitle').val());
+				bean.setPlannedTo($('#inputDate').val());
+				bean.setUrgent(document.getElementById('chkUrgent').checked);
+				
+				ToDoBO.setItem(bean);
+				_this.closeFormEdit(arguments);
+				_this.getToDoList(arguments);
+			},
+			
+			setCanceled :function(){
+				var id = $('#hiddenId').val();
+				ToDoBO.setCanceled(id);
+				_this.closeFormEdit(arguments);
+				_this.getToDoList(arguments);
+			},
+			
+			setDone :function(){
+				var id = $('#hiddenId').val();
+				
+				ToDoBO.setDone(id);
+				_this.closeFormEdit(arguments);
+				_this.getToDoList(arguments);
+			},
+			
 			getFormEdit : function(id){
 				ToDoView.getForm(arguments);
 				ToDoView.getFormEdit(arguments);
+				document.getElementById("hiddenId").value = id;
 				ToDoBO.getItemById(id);
 				
 			},
