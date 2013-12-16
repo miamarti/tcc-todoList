@@ -102,9 +102,10 @@
       <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
     </feature>
 
+    <gap:plugin name="Calendar" value="nl.xservices.plugins.Calendar" />
+
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
-      <gap:plugin name="Calendar" value="nl.xservices.plugins.Calendar" />
     </plugins>
 
 </widget>
