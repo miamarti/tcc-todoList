@@ -17,5 +17,5 @@
       CleverCode
     </author>
 
-    <gap:plugin name="nl.xservices.plugins.Calendar" />
+    <gap:plugin name="genesis.plugins.calendar" />
 </widget>
