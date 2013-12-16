@@ -17,5 +17,8 @@
       CleverCode
     </author>
 
-    <gap:plugin name="genesis.plugins.calendar" version="1.0" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="genesis.plugins.calendar"/>
 </widget>
