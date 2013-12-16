@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/2.9"
+        id          = "com.tcc.tcc-todolist"
+        version     = "2.9.0" >
+
+    <name>TCC-ToDoList</name>
+
+    <description>
+        Projeto de TCC. 
+    </description>
+
+	<gap:plugin name="nl.x-services.plugins.calendar" />
+	
+</widget>
