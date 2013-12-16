@@ -529,6 +529,35 @@ html, body, .container {
 	cursor: pointer;
 }
 
+
+#formCrud .fa-times{
+	float: center;
+	color: #FFF;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+#formCrud .fa-arrow-circle-o-left{
+	float: left;
+	color: #FFF;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+#formCrud .fa-sign-in{
+	float: right;
+	color: #FFF;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+#formCrud .fa-check{
+	float: center;
+	color: #FFF;
+	font-size: 50px;
+	cursor: pointer;
+}
+
 #formCrud input[type="text"]{
 	height: 45px;
 	width: 70%;

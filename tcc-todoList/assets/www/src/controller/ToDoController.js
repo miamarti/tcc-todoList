@@ -59,10 +59,13 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			/**
 			 * Get Cancelled List
 			 */
-			getCancelled : function(){
-				ToDoBO.getCancelled(arguments);
+			getCanceled : function(){
+				ToDoBO.getCanceled(arguments);
 			},
 			
+			getDone	: function(){
+					ToDoBO.getDone(arguments);	
+			},
 			getFormNew : function(){
 				ToDoView.getForm(arguments);
 				ToDoView.getFormAdd(arguments);
@@ -71,24 +74,58 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			closeFormNew :function(){
 				ToDoView.closeForm(arguments);
 				ToDoView.closeFormAdd(arguments);
-				_this.getAll();
 			},
 			
 			setNewItem :function(){
-				var bean = new ToDoBean();
-				bean.setTitle($('#inputTitle').val());
-				bean.setPlannedTo($('#inputDate').val());
-				bean.setUrgent(document.getElementById('chkUrgent').checked);
-				
-				ToDoBO.setNewItem(bean);
-				_this.closeFormNew(arguments);
-//				_this.getToDoList(arguments);
-				_this.getAll();
+				if (confirm('Are you sure about that?')) { 
+					var bean = new ToDoBean();
+					bean.setTitle($('#inputTitle').val());
+					bean.setPlannedTo($('#inputDate').val());
+					bean.setUrgent(document.getElementById('chkUrgent').checked);
+					
+					ToDoBO.setNewItem(bean);
+					_this.closeFormNew(arguments);
+					_this.getToDoList(arguments);
+				}
+			},
+			
+			setItem :function(){
+				if (confirm('Are you sure about that?')) { 
+					var bean = new ToDoBean();
+					bean.setId($('#hiddenId').val());
+					bean.setTitle($('#inputTitle').val());
+					bean.setPlannedTo($('#inputDate').val());
+					bean.setUrgent(document.getElementById('chkUrgent').checked);
+					
+					ToDoBO.setItem(bean);
+					_this.closeFormEdit(arguments);
+					_this.getToDoList(arguments);
+				}
+			},
+			
+			setCanceled :function(){
+				if (confirm('Are you sure about that?')) { 
+					var id = $('#hiddenId').val();
+					ToDoBO.setCanceled(id);
+					_this.closeFormEdit(arguments);
+					_this.getToDoList(arguments);
+				}
+			},
+			
+			setDone :function(){
+				if (confirm('Are you sure about that?')) { 
+					var id = $('#hiddenId').val();
+					
+					ToDoBO.setDone(id);
+					_this.closeFormEdit(arguments);
+					_this.getToDoList(arguments);
+				}
 			},
 			
 			getFormEdit : function(id){
 				ToDoView.getForm(arguments);
 				ToDoView.getFormEdit(arguments);
+				document.getElementById("hiddenId").value = id;
 				ToDoBO.getItemById(id);
 				
 			},
@@ -96,7 +133,6 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			closeFormEdit :function(){
 				ToDoView.closeForm(arguments);
 				ToDoView.closeFormEdit(arguments);
-				_this.getAll();
 			}
 			
 	};

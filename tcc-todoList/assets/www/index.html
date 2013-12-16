@@ -31,7 +31,7 @@
 				<h3 class="custom-month-year">
 					<span id="custom-month" class="custom-month">The simple simple </span>
 					<span id="custom-year" class="custom-year">list</span>
-					<span><br><a href="#ToDoController/getAll">All</a> | <a href="#ToDoController/getToDoList">Today</a> | <a href="#ToDoController/getUrgent">Urgent</a>
+					<span><br><a href="#ToDoController/getAll">All</a> | <a href="#ToDoController/getToDoList">Today</a> | <a href="#ToDoController/getUrgent">Urgent</a>| <a href="#ToDoController/getCanceled">Canceled</a>| <a href="#ToDoController/getDone">Done</a>
 <!-- 					 | <a href="#">Canceled</a></span> -->
 					<br/>
 					<br/>
@@ -70,7 +70,7 @@
 			</h2>
 		</div>
 		<hr class="style-seven margin-10">
-		
+		<input type="hidden" id="hiddenId">
 		<input type="text" id="inputTitle" class="inputText" placeholder="Insira aqui o título">
 		<input type="date" id="inputDate" class="inputText" placeholder="dd/MM/yyyy">
 <!-- 		<input type="checkbox" id="chkUrgent"><div style="float: right;">Urgente</div> -->
@@ -92,10 +92,12 @@
 		<br/><br/><br/><br/><br/>
 		<hr class="style-seven margin-10">
 		
-		<a href="#ToDoController/closeFormEdit"><i id="btnCloseAdd" class="fa fa-times-circle-o hide"></i></a>
-		<i id="btnSaveAdd" class="fa fa-sign-in hide" data-controller="#_this/setNewItem"></i>
-		<a href="#ToDoController/closeFormNew"><i id="btnCloseEdit" class="fa fa-times-circle-o hide"></i></a>
-		<i id="btnSaveEdit" class="fa fa-sign-in hide" data-controller="#_this/setNewItem"></i>
+		<a href="#ToDoController/closeFormNew"><i id="btnCloseAdd" class="fa fa-arrow-circle-o-left hide"></i></a>
+		<a href="#ToDoController/setNewItem"><i id="btnSaveAdd" class="fa fa-sign-in hide"></i></a>
+		<a href="#ToDoController/closeFormEdit"><i id="btnCloseEdit" class="fa fa-arrow-circle-o-left hide"></i></a>
+		<a href="#ToDoController/setCanceled"><i id="btnCancel" class="fa fa-times hide"></i></a>
+		<a href="#ToDoController/setDone"><i id="btnDone" class="fa fa-check hide"></i></a>
+		<a href="#ToDoController/setItem"><i id="btnSaveEdit" class="fa fa-sign-in hide"></i></a>
 	</div>
 
 </body>

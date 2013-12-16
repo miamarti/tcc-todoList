@@ -51,8 +51,8 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../models/EventBean", "..
 			/**
 			 * List events list cancelled
 			 */
-			getCancelled : function(){
-				ToDoDAOWebDB.getTodoList(function(resultSet){
+			getCanceled : function(){
+				ToDoDAOWebDB.getCanceled(function(resultSet){
 					var table = '';
 					for(var i=0; i < resultSet.length; i++){
 						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
@@ -60,6 +60,20 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../models/EventBean", "..
 					$('#todoListContent').html(table);
 				});
 			},
+			
+			/**
+			 * List events list cancelled
+			 */
+			getDone : function(){
+				ToDoDAOWebDB.getDone(function(resultSet){
+					var table = '';
+					for(var i=0; i < resultSet.length; i++){
+						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
+					}
+					$('#todoListContent').html(table);
+				});
+			},
+			
 			getItemById : function(id){
 				ToDoDAOWebDB.getItemById(id,function(resultSet){
 					ToDoView.setFormEdit(new ToDoBean(resultSet.item(0)));
@@ -68,19 +82,40 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../models/EventBean", "..
 			
 			setNewItem : function(bean){
 				try{
-					
 					var eventBean = new EventBean();
-					eventBean.setStartDate(new Date("September 24, 2013 13:00:00"));
-					eventBean.setEndDate(new Date("September 24, 2013 14:30:00"));
-					eventBean.setTitle("My nice event");
-					eventBean.setLocation("Home");
-					eventBean.setNotes("Some notes about this event.");
+					eventBean.setStartDate(new Date(bean.getPlannedTo()));
+					eventBean.setEndDate(new Date(bean.getPlannedTo()));
+					eventBean.setTitle(bean.getTitle());
+					eventBean.setLocation("");
+					eventBean.setNotes("");
 					
 					Calendar.setEvent(eventBean, function(result){
 						alert(result);
 					});
-					
+				
 					ToDoDAOWebDB.setNewItem(bean);
+				}finally{}
+				
+			},
+			
+			setItem : function(bean){
+				console.log(bean.getId());
+				try{
+					ToDoDAOWebDB.setItem(bean);
+				}finally{}
+				
+			},
+			
+			setCanceled : function(id){
+				try{
+					ToDoDAOWebDB.setCanceled(id);
+				}finally{}
+				
+			},
+			
+			setDone : function(id){
+				try{
+					ToDoDAOWebDB.setDone(id);
 				}finally{}
 				
 			}
