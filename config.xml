@@ -104,7 +104,7 @@
 
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
-     <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+      <gap:plugin name="Calendar" value="nl.xservices.plugins.Calendar" />
     </plugins>
 
 </widget>
