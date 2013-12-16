@@ -106,6 +106,7 @@
         </feature>
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
-      <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     </plugins>
+    
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
 </widget>
