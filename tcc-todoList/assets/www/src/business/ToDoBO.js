@@ -83,8 +83,10 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../models/EventBean", "..
 			setNewItem : function(bean){
 				try{
 					var eventBean = new EventBean();
-					eventBean.setStartDate(new Date(bean.getPlannedTo()));
-					eventBean.setEndDate(new Date(bean.getPlannedTo()));
+					var contentDate = bean.getPlannedTo().split('/');
+					var data = new Date(contentDate[2],contentDate[1],contentDate[0]);
+					eventBean.setStartDate(data);
+					eventBean.setEndDate(data);
 					eventBean.setTitle(bean.getTitle());
 					eventBean.setLocation("");
 					eventBean.setNotes("");
