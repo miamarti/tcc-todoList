@@ -62,4 +62,4 @@ Calendar.install = function () {
     return window.plugins.calendar;
 };
 
-cordova.addConstructor(Calendar.install);
+cordova.addConstructor(Calendar.install); 
