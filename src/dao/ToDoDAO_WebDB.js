@@ -41,6 +41,16 @@ define(["../dao/DataBase/ToDoWebDB"], function(ToDoWebDB){
 			});
 		},
 		
+		getDone: function(callback){
+			ToDoWebDB.getInstance(function(db){
+				db.connection.transaction(function(tx) {
+					tx.executeSql("SELECT * FROM todo where done like 'true'", [], function(tx, rs){
+						callback(rs.rows);
+					}, db.onError);
+				});
+			});
+		},
+		
 		getItemById : function(id,callback){
 			ToDoWebDB.getInstance(function(db){
 				db.connection.transaction(function(tx) {

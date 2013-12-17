@@ -30,12 +30,10 @@ define(function(){
 			$('#formCrud').removeClass('hide');
 		},
 		getFormAdd : function(){
-			console.log('getAdd');
 			$('#btnSaveAdd').removeClass('hide');
 			$('#btnCloseAdd').removeClass('hide');
 		},
 		getFormEdit : function(){
-			console.log('getEdit');
 			$('#btnSaveEdit').removeClass('hide');
 			$('#btnCloseEdit').removeClass('hide');
 			$('#btnDone').removeClass('hide');
@@ -53,7 +51,6 @@ define(function(){
 		},
 		
 		closeForm : function(){
-			console.log('closeForm');
 			document.getElementById('inputTitle').value='';
 			document.getElementById('inputDate').value='';
 			document.getElementById('chkUrgent').checked = false;
@@ -61,12 +58,10 @@ define(function(){
 			$('#formCrud').addClass('hide');
 		},
 		closeFormAdd : function(){
-			console.log('closeFormAdd');
 			$('#btnSaveAdd').addClass('hide');
 			$('#btnCloseAdd').addClass('hide');
 		},
 		closeFormEdit : function(){
-			console.log('closeFormEdit');
 			$('#btnSaveEdit').addClass('hide');
 			$('#btnCloseEdit').addClass('hide');
 			$('#btnDone').addClass('hide');

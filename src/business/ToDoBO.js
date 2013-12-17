@@ -1,4 +1,4 @@
-define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], function(ToDoDAOWebDB, ToDoBean, ToDoView){
+define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean",  "../views/ToDoView"], function(ToDoDAOWebDB, ToDoBean, ToDoView){
 	var _this = {
 
 			/**
@@ -6,8 +6,6 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 			 */
 			getStart : function(){
 				this.getToDoList();
-//				ToDoView.setBackground('womanly');
-//				ToDoView.getBackground();
 				console.log('ToDoList Start...');
 			},
 			
@@ -62,6 +60,20 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 					$('#todoListContent').html(table);
 				});
 			},
+			
+			/**
+			 * List events list cancelled
+			 */
+			getDone : function(){
+				ToDoDAOWebDB.getDone(function(resultSet){
+					var table = '';
+					for(var i=0; i < resultSet.length; i++){
+						table += ToDoView.getLineList(new ToDoBean(resultSet.item(i)));
+					}
+					$('#todoListContent').html(table);
+				});
+			},
+			
 			getItemById : function(id){
 				ToDoDAOWebDB.getItemById(id,function(resultSet){
 					ToDoView.setFormEdit(new ToDoBean(resultSet.item(0)));
@@ -70,6 +82,17 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../views/ToDoView"], func
 			
 			setNewItem : function(bean){
 				try{
+//					var eventBean = new EventBean();
+//					eventBean.setStartDate(new Date(bean.getPlannedTo()));
+//					eventBean.setEndDate(new Date(bean.getPlannedTo()));
+//					eventBean.setTitle(bean.getTitle());
+//					eventBean.setLocation("");
+//					eventBean.setNotes("");
+					
+//					Calendar.setEvent(eventBean, function(result){
+//						alert(result);
+//					});
+				
 					ToDoDAOWebDB.setNewItem(bean);
 				}finally{}
 				

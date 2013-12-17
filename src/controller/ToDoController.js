@@ -6,7 +6,6 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			 */
 			reflection : function(rflt){
 				try {
-					console.log(rflt);
 					(rflt.content.length == 1)?eval(rflt.controller + '.' + rflt.content.obj + '();'):eval(rflt.controller + '.' + rflt.content.obj + '(' + rflt.content.args + ');');
 				} finally {}
 			},
@@ -64,6 +63,9 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 				ToDoBO.getCanceled(arguments);
 			},
 			
+			getDone	: function(){
+					ToDoBO.getDone(arguments);	
+			},
 			getFormNew : function(){
 				ToDoView.getForm(arguments);
 				ToDoView.getFormAdd(arguments);
@@ -75,41 +77,49 @@ define(["../helpers/RESTfulHelper", "../business/ToDoBO", "../views/ToDoView", "
 			},
 			
 			setNewItem :function(){
-				var bean = new ToDoBean();
-				bean.setTitle($('#inputTitle').val());
-				bean.setPlannedTo($('#inputDate').val());
-				bean.setUrgent(document.getElementById('chkUrgent').checked);
-				
-				ToDoBO.setNewItem(bean);
-				_this.closeFormNew(arguments);
-				_this.getToDoList(arguments);
+				if (confirm('Are you sure about that?')) { 
+					var bean = new ToDoBean();
+					bean.setTitle($('#inputTitle').val());
+					bean.setPlannedTo($('#inputDate').val());
+					bean.setUrgent(document.getElementById('chkUrgent').checked);
+					
+					ToDoBO.setNewItem(bean);
+					_this.closeFormNew(arguments);
+					_this.getToDoList(arguments);
+				}
 			},
 			
 			setItem :function(){
-				var bean = new ToDoBean();
-				bean.setId($('#hiddenId').val());
-				bean.setTitle($('#inputTitle').val());
-				bean.setPlannedTo($('#inputDate').val());
-				bean.setUrgent(document.getElementById('chkUrgent').checked);
-				
-				ToDoBO.setItem(bean);
-				_this.closeFormEdit(arguments);
-				_this.getToDoList(arguments);
+				if (confirm('Are you sure about that?')) { 
+					var bean = new ToDoBean();
+					bean.setId($('#hiddenId').val());
+					bean.setTitle($('#inputTitle').val());
+					bean.setPlannedTo($('#inputDate').val());
+					bean.setUrgent(document.getElementById('chkUrgent').checked);
+					
+					ToDoBO.setItem(bean);
+					_this.closeFormEdit(arguments);
+					_this.getToDoList(arguments);
+				}
 			},
 			
 			setCanceled :function(){
-				var id = $('#hiddenId').val();
-				ToDoBO.setCanceled(id);
-				_this.closeFormEdit(arguments);
-				_this.getToDoList(arguments);
+				if (confirm('Are you sure about that?')) { 
+					var id = $('#hiddenId').val();
+					ToDoBO.setCanceled(id);
+					_this.closeFormEdit(arguments);
+					_this.getToDoList(arguments);
+				}
 			},
 			
 			setDone :function(){
-				var id = $('#hiddenId').val();
-				
-				ToDoBO.setDone(id);
-				_this.closeFormEdit(arguments);
-				_this.getToDoList(arguments);
+				if (confirm('Are you sure about that?')) { 
+					var id = $('#hiddenId').val();
+					
+					ToDoBO.setDone(id);
+					_this.closeFormEdit(arguments);
+					_this.getToDoList(arguments);
+				}
 			},
 			
 			getFormEdit : function(id){
