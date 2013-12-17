@@ -84,7 +84,7 @@ define(["../dao/ToDoDAO_WebDB", "../models/ToDoBean", "../models/EventBean", "..
 				try{
 					var eventBean = new EventBean();
 					var contentDate = bean.getPlannedTo().split('/');
-					var data = new Date(contentDate[2],contentDate[1],contentDate[0]);
+					var data = new Date(contentDate[2],(contentDate[1]-1),contentDate[0]);
 					eventBean.setStartDate(data);
 					eventBean.setEndDate(data);
 					eventBean.setTitle(bean.getTitle());
